@@ -15,7 +15,7 @@ import {
   TooltipTrigger,
 } from "~/components/ui/tooltip";
 import { api } from "~/lib/trpc/client";
-import { Heart, Sparkles, CircleCheck, SmilePlus, type LucideIcon } from "lucide-react";
+import { Check, ThumbsUp, X, RefreshCw, SmilePlus, type LucideIcon } from "lucide-react";
 import { cn, pluralize } from "~/lib/utils";
 import { EmojiImage } from "~/components/settings/EmojiUpload";
 import { ReactionsDialog } from "./ReactionsDialog";
@@ -49,9 +49,10 @@ function isCustomEmoji(reaction: ReactionOption): reaction is CustomEmojiReactio
 }
 
 const DEFAULT_REACTIONS: DefaultReaction[] = [
-  { type: "like", icon: Heart, label: "Like" },
-  { type: "wow", icon: Sparkles, label: "Wow" },
-  { type: "approve", icon: CircleCheck, label: "Approve" },
+  { type: "done", icon: Check, label: "Done" },
+  { type: "approved", icon: ThumbsUp, label: "Approved" },
+  { type: "discard", icon: X, label: "Discard" },
+  { type: "iterate", icon: RefreshCw, label: "Iterate" },
 ];
 
 export function ReactionButton({
